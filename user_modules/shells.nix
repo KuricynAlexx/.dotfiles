@@ -10,6 +10,8 @@
       ".." = "cd ..";
       gcc-ar="ar --plugin=/path/to/liblto_plugin.so";
       ns="nix-shell";
+      ".duf"="du -h --max-depth=1 | sort -h -r"; # includes .hidden-files
+      duf="du -h -s ./* | sort -h -r"; # excludes .hidden-files
     };
     bashrcExtra = ''
 # >>> mamba initialize >>>
